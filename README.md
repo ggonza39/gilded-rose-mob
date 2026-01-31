@@ -3,7 +3,7 @@
 This repository contains our team's work for the Gilded Rose refactoring kata.
 
 ## Team
-- Gilbert0 Gonzalez
+- Gilberto Gonzalez
 - Hunter Blake  
 - Heidi Wilder
 - Takeshia Banks
