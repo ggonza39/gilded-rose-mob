@@ -58,6 +58,22 @@ The following tools are proposed to support effective remote mob programming. Th
   - Screenshots of coverage results will be committed to this repository
 
 ---
+## Mob Programming Session Guide
+- **Driver (most proficient coder)**
+  - Hosts IntelliJ
+  - Hosts Code With Me
+  - Types the code
+  - Runs tests
+  - Shares screen
+
+- **Navigators (everyone else)**
+  - Read logic aloud
+  - Ask questions
+  - Suggest tests
+  - Confirm behavior
+  - Catch mistakes
+ 
+---
 
 **Note:** This repository will be updated incrementally as we complete each assignment step.
 
