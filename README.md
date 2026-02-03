@@ -12,7 +12,9 @@ This repository contains our team's work for the Gilded Rose refactoring kata.
 - Dev
   - Takeshia Banks  
 - Dev
-  - Anthony Nguyen    
+  - Anthony Nguyen
+- Dev
+  - Connor McDonald 
 
 ## Course
 SWE6733 – Emerging Software Engineering Processes  
