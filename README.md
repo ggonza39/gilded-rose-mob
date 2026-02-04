@@ -3,12 +3,18 @@
 This repository contains our team's work for the Gilded Rose refactoring kata.
 
 ## Team
-- Gilberto Gonzalez  
-- Hunter Blake  
-- Heidi Wilder  
-- Takeshia Banks  
-- Anthony Nguyen  
-- Gibson Garner  
+- Team Lead
+  - Gilberto Gonzalez
+- Dev Lead
+  - Hunter Blake  
+- Dev
+  - Heidi Wilder  
+- Dev
+  - Takeshia Banks  
+- Dev
+  - Anthony Nguyen
+- Dev
+  - Gibson Garner
 
 ## Course
 SWE6733 – Emerging Software Engineering Processes  
