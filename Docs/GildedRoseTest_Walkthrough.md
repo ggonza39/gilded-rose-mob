@@ -1,4 +1,4 @@
-# GildedRoseTest – Starter Test Walkthrough
+# GildedRoseTest | Starter Test Walkthrough
 
 This document explains the original `GildedRoseTest.java` file that comes with
 the Gilded Rose refactoring kata. The purpose of this walkthrough is to ensure
