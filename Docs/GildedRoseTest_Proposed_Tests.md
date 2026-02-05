@@ -42,11 +42,11 @@ is broken.
 
 ```java
 @Test
-void qualityIsNeverNegative() {
-Item[] items = { new Item("Elixir of the Mongoose", 5, 0) };
-GildedRose app = new GildedRose(items);
-app.updateQuality();
-assertEquals(0, items[0].quality);
+void normalItem_degradesTwiceAsFastAfterSellDate() {
+    Item[] items = { new Item("Elixir of the Mongoose", 0, 10) };
+    GildedRose app = new GildedRose(items);
+    app.updateQuality();
+    assertEquals(8, items[0].quality);
 }
 ```
 ### What this tests
