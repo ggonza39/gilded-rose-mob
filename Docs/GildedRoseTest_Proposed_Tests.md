@@ -169,11 +169,13 @@ assertEquals(21, items[0].quality);
 @Test
 void backstagePasses_increaseByTwoWhenTenDaysOrLess() {
 Item[] items = {
-new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20)
+new Item("Backstage passes to a TAFKAL80ETC concert", 11, 20)
 };
 GildedRose app = new GildedRose(items);
 app.updateQuality();
 assertEquals(22, items[0].quality);
+app.updateQuality();
+assertEquals(24, items[0].quality);
 }
 ```
 ### Backstage Pass – 5 Days or Less
@@ -187,6 +189,8 @@ new Item("Backstage passes to a TAFKAL80ETC concert", 5, 20)
 GildedRose app = new GildedRose(items);
 app.updateQuality();
 assertEquals(23, items[0].quality);
+app.updateQuality();
+assertEquals(26, items[0].quality);
 }
 ```
 
@@ -203,6 +207,12 @@ app.updateQuality();
 assertEquals(0, items[0].quality);
 }
 ```
+
+### What this tests
+
+That the backstage passes quality increaces by 2 on or after the 10th day, and by 3 on or after the  5th day.
+Also tests that quality drops to 0 after the concert.
+
 ### Why these tests exist
 Backstage passes contain tiered, time-sensitive logic and are the most complex
 rules in the system.
