@@ -81,7 +81,8 @@ The following tools are proposed to support effective remote mob programming. Th
  
 ---
 ## Mob Programming Sessions Links
-- Unit Testing - https://kennesawedu-my.sharepoint.com/:v:/g/personal/hwilder1_students_kennesaw_edu/IQAz5mhx_q8DQbKEM_He6zFDAeNGTL2YMDLugrOSgB5GloY?e=OQ3lna
+- Unit Testing
+  - https://kennesawedu-my.sharepoint.com/:v:/g/personal/hwilder1_students_kennesaw_edu/IQAz5mhx_q8DQbKEM_He6zFDAeNGTL2YMDLugrOSgB5GloY?e=OQ3lna
 - Refactoring
 - New Features
 
