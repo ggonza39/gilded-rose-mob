@@ -80,6 +80,10 @@ The following tools are proposed to support effective remote mob programming. Th
   - Catch mistakes
  
 ---
+## Mob Programming Sessions Links
+- Unit Testing
+- Refactoring
+- New Features
 
 **Note:** This repository will be updated incrementally as we complete each assignment step.
 
