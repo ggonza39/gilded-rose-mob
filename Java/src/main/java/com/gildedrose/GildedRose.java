@@ -2,112 +2,176 @@ package com.gildedrose;
 
 /**
  * GildedRose is responsible for updating the sellIn and quality
- * values for all items in the inventory.
- *
- * NOTE:
- * This implementation is intentionally complex and hard to read.
- * It relies heavily on nested conditionals and string comparisons.
- * This is the baseline code we will refactor later.
+ * values for all inventory items.
+
+ * This version has been refactored to:
+ * - Remove deeply nested conditionals
+ * - Separate business rules into small, readable methods
+ * - Preserve original behavior exactly
  */
 class GildedRose {
 
+    // Collection of items managed by the system
     Item[] items;
 
-    // Constructor simply stores the items array
+    /**
+     * Constructor simply stores the items array.
+     */
     public GildedRose(Item[] items) {
         this.items = items;
     }
 
     /**
-     * updateQuality()
-     *
-     * This method applies all business rules for each item:
-     * - Normal items decrease in quality over time
-     * - Aged Brie increases in quality
-     * - Backstage passes increase faster as the concert approaches
-     * - Sulfuras never changes
-     *
-     * The logic is implemented using deeply nested conditionals
-     * and repeated string comparisons, which makes it difficult
-     * to read, understand, and maintain.
+     * Main update method executed once per day.
+
+     * ORDER OF OPERATIONS (must match legacy behavior):
+     * 1. Update quality based on item type (before expiration)
+     * 2. Decrease sellIn (except Sulfuras)
+     * 3. Apply additional rules if item has expired
      */
     public void updateQuality() {
 
-        // Iterate over every item in the inventory
-        for (int i = 0; i < items.length; i++) {
+        for (Item item : items) {
 
-            // Handle items that are NOT Aged Brie or Backstage passes
-            if (!items[i].name.equals("Aged Brie")
-                && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            // Step 1: Apply standard quality rules
+            updateItemQuality(item);
 
-                // Quality can only decrease if it is above zero
-                if (items[i].quality > 0) {
+            // Step 2: Decrement sellIn where appropriate
+            updateSellIn(item);
 
-                    // Sulfuras never changes quality
-                    if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                        items[i].quality = items[i].quality - 1;
-                    }
-                }
-
-            } else {
-                // Handle Aged Brie and Backstage passes (they increase in quality)
-
-                // Quality is capped at 50
-                if (items[i].quality < 50) {
-                    items[i].quality = items[i].quality + 1;
-
-                    // Additional rules for Backstage passes
-                    if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-
-                        // Increase quality again if 10 days or fewer remain
-                        if (items[i].sellIn < 11) {
-                            if (items[i].quality < 50) {
-                                items[i].quality = items[i].quality + 1;
-                            }
-                        }
-
-                        // Increase quality a third time if 5 days or fewer remain
-                        if (items[i].sellIn < 6) {
-                            if (items[i].quality < 50) {
-                                items[i].quality = items[i].quality + 1;
-                            }
-                        }
-                    }
-                }
-            }
-
-            // Decrease sellIn for all items except Sulfuras
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                items[i].sellIn = items[i].sellIn - 1;
-            }
-
-            // Additional rules once the sell-by date has passed
-            if (items[i].sellIn < 0) {
-
-                // Normal items degrade twice as fast after expiration
-                if (!items[i].name.equals("Aged Brie")) {
-
-                    if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-
-                        if (items[i].quality > 0) {
-
-                            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                                items[i].quality = items[i].quality - 1;
-                            }
-                        }
-
-                    } else {
-                        // Backstage passes drop to zero quality after the concert
-                        items[i].quality = items[i].quality - items[i].quality;
-                    }
-
-                } else {
-                    // Aged Brie increases in quality after expiration
-                    if (items[i].quality < 50) {
-                        items[i].quality = items[i].quality + 1;
-                    }
-                }
-            }
+            // Step 3: Apply expiration rules (sellIn < 0)
+            handleExpiredItem(item);
         }
+    }
+
+    /* ============================================================
+       QUALITY UPDATE RULES (BEFORE EXPIRATION)
+       ============================================================ */
+
+    /**
+     * Updates item quality according to type-specific rules
+     * before the sell-by date is evaluated.
+
+     * Rules:
+     * - Aged Brie increases in quality
+     * - Backstage passes increase as the concert approaches
+     * - Normal items decrease in quality
+     * - Sulfuras never changes
+     */
+    private void updateItemQuality(Item item) {
+
+        if (isAgedBrie(item)) {
+            increaseQuality(item);
+
+        } else if (isBackstagePass(item)) {
+
+            // Backstage passes increase in quality as sell date approaches
+            increaseQuality(item);
+
+            if (item.sellIn <= 10) {
+                increaseQuality(item);
+            }
+
+            if (item.sellIn <= 5) {
+                increaseQuality(item);
+            }
+
+        } else if (!isSulfuras(item)) {
+            // Normal items decrease in quality
+            decreaseQuality(item);
+        }
+    }
+
+    /* ============================================================
+       SELL-IN UPDATE
+       ============================================================ */
+
+    /**
+     * Decrements sellIn value for all items except Sulfuras.
+
+     * Sulfuras is legendary and does not change.
+     */
+    private void updateSellIn(Item item) {
+        if (!isSulfuras(item)) {
+            item.sellIn--;
+        }
+    }
+
+    /* ============================================================
+       QUALITY UPDATE RULES (AFTER EXPIRATION)
+       ============================================================ */
+
+    /**
+     * Applies additional rules once sellIn < 0.
+
+     * Rules:
+     * - Normal items degrade twice as fast
+     * - Aged Brie increases again
+     * - Backstage passes drop to zero
+     * - Sulfuras remains unchanged
+     */
+    private void handleExpiredItem(Item item) {
+
+        // If item has not expired, no additional logic applies
+        if (item.sellIn >= 0) {
+            return;
+        }
+
+        if (isAgedBrie(item)) {
+            increaseQuality(item);
+
+        } else if (isBackstagePass(item)) {
+            // After concert, quality drops to zero
+            item.quality = 0;
+
+        } else if (!isSulfuras(item)) {
+            // Normal items degrade twice as fast after expiration
+            decreaseQuality(item);
+        }
+    }
+
+    /* ============================================================
+       QUALITY BOUNDARY HELPERS
+       ============================================================ */
+
+    /**
+     * Increases quality by 1, ensuring it never exceeds 50.
+     */
+    private void increaseQuality(Item item) {
+        if (item.quality < 50) {
+            item.quality++;
+        }
+    }
+
+    /**
+     * Decreases quality by 1, ensuring it never drops below 0.
+     */
+    private void decreaseQuality(Item item) {
+        if (item.quality > 0) {
+            item.quality--;
+        }
+    }
+
+    /* ============================================================
+       ITEM TYPE CHECKS
+       ============================================================ */
+
+    /**
+     * Centralized item type checks.
+
+     * This removes repeated string literals ("magic strings")
+     * from the main logic and improves readability.
+     */
+
+    private boolean isAgedBrie(Item item) {
+        return item.name.equals("Aged Brie");
+    }
+
+    private boolean isBackstagePass(Item item) {
+        return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
+    }
+
+    private boolean isSulfuras(Item item) {
+        return item.name.equals("Sulfuras, Hand of Ragnaros");
     }
 }
