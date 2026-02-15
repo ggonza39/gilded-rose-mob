@@ -38,9 +38,7 @@ class GildedRoseTest {
 //        assertEquals("fixme", app.items[0].name);
 //    }
 
-    /* ============================================================
-       NORMAL ITEMS
-       ============================================================ */
+    /* NORMAL ITEMS */
 
     @Test
     void normalItem_decreasesQualityAndSellInByOne() {
@@ -92,9 +90,7 @@ class GildedRoseTest {
         assertEquals(0, app.items[0].quality);
     }
 
-    /* ============================================================
-       AGED BRIE
-       ============================================================ */
+    /* AGED BRIE */
 
     @Test
     void agedBrie_increasesInQualityOverTime() {
@@ -141,9 +137,7 @@ class GildedRoseTest {
         assertEquals(50, app.items[0].quality);
     }
 
-    /* ============================================================
-       SULFURAS
-       ============================================================ */
+    /* SULFURAS */
 
     @Test
     void sulfuras_neverChangesSellInOrQuality() {
@@ -161,9 +155,7 @@ class GildedRoseTest {
         assertEquals(80, app.items[0].quality);
     }
 
-    /* ============================================================
-       BACKSTAGE PASSES
-       ============================================================ */
+    /* BACKSTAGE PASSES */
 
     @Test
     void backstagePasses_increaseByOneWhenMoreThanTenDaysLeft() {
