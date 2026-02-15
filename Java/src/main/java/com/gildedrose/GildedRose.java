@@ -44,12 +44,8 @@ class GildedRose {
         }
     }
 
-    /* ============================================================
-       QUALITY UPDATE RULES (BEFORE EXPIRATION)
-       ============================================================ */
-
     /**
-     * Updates item quality according to type-specific rules
+     * Quality update rules before expiration: Updates item quality according to type-specific rules
      * before the sell-by date is evaluated.
 
      * Rules:
@@ -82,12 +78,8 @@ class GildedRose {
         }
     }
 
-    /* ============================================================
-       SELL-IN UPDATE
-       ============================================================ */
-
     /**
-     * Decrements sellIn value for all items except Sulfuras.
+     * Sell-In Update: Decrements sellIn value for all items except Sulfuras.
 
      * Sulfuras is legendary and does not change.
      */
@@ -97,12 +89,8 @@ class GildedRose {
         }
     }
 
-    /* ============================================================
-       QUALITY UPDATE RULES (AFTER EXPIRATION)
-       ============================================================ */
-
     /**
-     * Applies additional rules once sellIn < 0.
+     * Quality update rules after expiration: Applies additional rules once sellIn < 0.
 
      * Rules:
      * - Normal items degrade twice as fast
@@ -130,12 +118,8 @@ class GildedRose {
         }
     }
 
-    /* ============================================================
-       QUALITY BOUNDARY HELPERS
-       ============================================================ */
-
     /**
-     * Increases quality by 1, ensuring it never exceeds 50.
+     * Quality boundary helpers: Increases quality by 1, ensuring it never exceeds 50.
      */
     private void increaseQuality(Item item) {
         if (item.quality < 50) {
@@ -151,10 +135,6 @@ class GildedRose {
             item.quality--;
         }
     }
-
-    /* ============================================================
-       ITEM TYPE CHECKS
-       ============================================================ */
 
     /**
      * Centralized item type checks.
