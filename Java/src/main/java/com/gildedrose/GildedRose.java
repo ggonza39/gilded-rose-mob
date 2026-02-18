@@ -45,7 +45,8 @@ class GildedRose {
     }
 
     /**
-     * Quality update rules before expiration: Updates item quality according to type-specific rules
+     * Quality update rules before expiration:
+     * Updates item quality according to type-specific rules
      * before the sell-by date is evaluated.
 
      * Rules:
@@ -64,22 +65,25 @@ class GildedRose {
             // Backstage passes increase in quality as sell date approaches
             increaseQuality(item);
 
+            // Additional increase when 10 days or fewer remain
             if (item.sellIn <= 10) {
                 increaseQuality(item);
             }
 
+            // Additional increase when 5 days or fewer remain
             if (item.sellIn <= 5) {
                 increaseQuality(item);
             }
 
         } else if (!isSulfuras(item)) {
-            // Normal items decrease in quality
-            decreaseQuality(item);
+            // Normal and Conjured items handled here
+            checkConjured(item);
         }
     }
 
     /**
-     * Sell-In Update: Decrements sellIn value for all items except Sulfuras.
+     * Sell-In Update:
+     * Decrements sellIn value for all items except Sulfuras.
 
      * Sulfuras is legendary and does not change.
      */
@@ -90,7 +94,8 @@ class GildedRose {
     }
 
     /**
-     * Quality update rules after expiration: Applies additional rules once sellIn < 0.
+     * Quality update rules after expiration:
+     * Applies additional rules once sellIn < 0.
 
      * Rules:
      * - Normal items degrade twice as fast
@@ -113,13 +118,30 @@ class GildedRose {
             item.quality = 0;
 
         } else if (!isSulfuras(item)) {
-            // Normal items degrade twice as fast after expiration
+            // Apply additional degradation logic after expiration
+            checkConjured(item);
+        }
+    }
+
+    /**
+     * Handles degradation logic for normal and Conjured items.
+     * - Normal items decrease quality by 1 per call.
+     * - Conjured items decrease quality twice per call
+     *   (representing "twice as fast" degradation).
+     * This method is reused both before and after expiration.
+     */
+    private void checkConjured(Item item) {
+        if (isConjured(item)){
+            decreaseQuality(item);
+            decreaseQuality(item);
+        } else {
             decreaseQuality(item);
         }
     }
 
     /**
-     * Quality boundary helpers: Increases quality by 1, ensuring it never exceeds 50.
+     * Quality boundary helpers:
+     * Increases quality by 1, ensuring it never exceeds 50.
      */
     private void increaseQuality(Item item) {
         if (item.quality < 50) {
@@ -138,7 +160,6 @@ class GildedRose {
 
     /**
      * Centralized item type checks.
-
      * This removes repeated string literals ("magic strings")
      * from the main logic and improves readability.
      */
@@ -153,5 +174,14 @@ class GildedRose {
 
     private boolean isSulfuras(Item item) {
         return item.name.equals("Sulfuras, Hand of Ragnaros");
+    }
+
+    /**
+     * Identifies Conjured items.
+     * Conjured items degrade twice as fast as normal items.
+     * Uses name matching to preserve compatibility with legacy design.
+     */
+    private boolean isConjured(Item item) {
+        return item.name.contains("Conjured");
     }
 }
