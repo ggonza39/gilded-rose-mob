@@ -86,6 +86,7 @@ The following tools are proposed to support effective remote mob programming. Th
 - Refactoring
   - https://teams.microsoft.com/l/meetingrecap?driveId=b%21DMYEe1zELkuiMRfFW2WdEYQyo2JuFhJHhm62ZHJrdkHdfh8fPO8zTozuhvVA8HsG&driveItemId=01VR6RHSQBQVSRQYLSZJF2XLCSJU5XWXVX&sitePath=https%3A%2F%2Fkennesawedu-my.sharepoint.com%2F%3Av%3A%2Fg%2Fpersonal%2Fggarne18_students_kennesaw_edu%2FIQABhWUYYXLKS6usUk07e163AR-XWUM7jtUpETCdxCas05o&fileUrl=https%3A%2F%2Fkennesawedu-my.sharepoint.com%2Fpersonal%2Fggarne18_students_kennesaw_edu%2FDocuments%2FRecordings%2FGilded+Rose+Refactoring-20260214_180804-Meeting+Recording.mp4%3Fweb%3D1&iCalUid=040000008200e00074c5b7101a82e00800000000e96f02fb0d9edc010000000000000000100000002d8236350d5f354e945511c91d9e1db5&threadId=19%3Ameeting_MmU4ZGU1NTgtOTJkOC00ZWU4LThiZDctZGI2ZjViYzZlMGEz%40thread.v2&organizerId=35b0813e-effd-41de-9034-08329b7eef5d&tenantId=45f26ee5-f134-439e-bc93-e6c7e33d61c2&callId=da68b245-5d2b-41e9-90b9-a471bf68d60c&threadType=Meeting&meetingType=Scheduled&subType=RecapSharingLink_RecapCore
 - New Features
+  - https://kennesawedu-my.sharepoint.com/personal/hwilder1_students_kennesaw_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fhwilder1%5Fstudents%5Fkennesaw%5Fedu%2FDocuments%2FRecordings%2FMob%20assignment%2D20260217%5F180702%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E087e4076%2D6e60%2D4dd4%2D961f%2Dd52c3c1a6777 
 
 **Note:** This repository will be updated incrementally as we complete each assignment step.
 
