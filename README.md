@@ -84,10 +84,10 @@ The following tools are proposed to support effective remote mob programming. Th
 - Unit Testing
   - https://kennesawedu-my.sharepoint.com/:v:/g/personal/hwilder1_students_kennesaw_edu/IQAz5mhx_q8DQbKEM_He6zFDAeNGTL2YMDLugrOSgB5GloY?e=OQ3lna
 - Refactoring
-  - https://teams.microsoft.com/l/meetingrecap?driveId=b%21DMYEe1zELkuiMRfFW2WdEYQyo2JuFhJHhm62ZHJrdkHdfh8fPO8zTozuhvVA8HsG&driveItemId=01VR6RHSQBQVSRQYLSZJF2XLCSJU5XWXVX&sitePath=https%3A%2F%2Fkennesawedu-my.sharepoint.com%2F%3Av%3A%2Fg%2Fpersonal%2Fggarne18_students_kennesaw_edu%2FIQABhWUYYXLKS6usUk07e163AR-XWUM7jtUpETCdxCas05o&fileUrl=https%3A%2F%2Fkennesawedu-my.sharepoint.com%2Fpersonal%2Fggarne18_students_kennesaw_edu%2FDocuments%2FRecordings%2FGilded+Rose+Refactoring-20260214_180804-Meeting+Recording.mp4%3Fweb%3D1&iCalUid=040000008200e00074c5b7101a82e00800000000e96f02fb0d9edc010000000000000000100000002d8236350d5f354e945511c91d9e1db5&threadId=19%3Ameeting_MmU4ZGU1NTgtOTJkOC00ZWU4LThiZDctZGI2ZjViYzZlMGEz%40thread.v2&organizerId=35b0813e-effd-41de-9034-08329b7eef5d&tenantId=45f26ee5-f134-439e-bc93-e6c7e33d61c2&callId=da68b245-5d2b-41e9-90b9-a471bf68d60c&threadType=Meeting&meetingType=Scheduled&subType=RecapSharingLink_RecapCore
+  - https://kennesawedu-my.sharepoint.com/personal/ggarne18_students_kennesaw_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fggarne18%5Fstudents%5Fkennesaw%5Fedu%2FDocuments%2FRecordings%2FGilded%20Rose%20Refactoring%2D20260214%5F180804%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E17c301d4%2De51d%2D4449%2D8abf%2Dd5666a859a70
 - New Features
+  - https://kennesawedu-my.sharepoint.com/personal/hwilder1_students_kennesaw_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fhwilder1%5Fstudents%5Fkennesaw%5Fedu%2FDocuments%2FRecordings%2FMob%20assignment%2D20260217%5F180702%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E3f86b96c%2Df375%2D475e%2D9b9a%2D0e67943bad6f
 
-**Note:** This repository will be updated incrementally as we complete each assignment step.
 
 
 
