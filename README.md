@@ -64,6 +64,35 @@ The following tools are proposed to support effective remote mob programming. Th
   - Screenshots of coverage results will be committed to this repository
 
 ---
+## Project Structure
+
+- The project follows a standard Gradle/Java directory layout.
+
+- **Main Application Code
+
+- Navigate to:
+
+  - Java/src/main/java/com/gildedrose/
+
+- This directory contains:
+
+  - GildedRose.java — Core business logic and updateQuality method
+  - Item.java — Data model representing inventory items
+ 
+- **Test Code
+
+- Navigate to:
+
+  - Java/src/test/java/com/gildedrose/
+
+
+- This directory contains:
+
+  - GildedRoseTest.java — Unit tests (including TDD tests for Conjured items)
+  - TexttestFixture.java — Legacy behavior verification tests
+
+---
+
 ## Mob Programming Session Guide
 - **Driver (most proficient coder)**
   - Hosts IntelliJ
