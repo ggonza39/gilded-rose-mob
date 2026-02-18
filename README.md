@@ -88,7 +88,6 @@ The following tools are proposed to support effective remote mob programming. Th
 - New Features
   - https://kennesawedu-my.sharepoint.com/personal/hwilder1_students_kennesaw_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fhwilder1%5Fstudents%5Fkennesaw%5Fedu%2FDocuments%2FRecordings%2FMob%20assignment%2D20260217%5F180702%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E087e4076%2D6e60%2D4dd4%2D961f%2Dd52c3c1a6777 
 
-**Note:** This repository will be updated incrementally as we complete each assignment step.
 
 
 
