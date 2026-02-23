@@ -113,7 +113,7 @@ The project follows a standard Gradle/Java directory layout.
 - Unit Testing
   - https://kennesawedu-my.sharepoint.com/:v:/g/personal/hwilder1_students_kennesaw_edu/IQAz5mhx_q8DQbKEM_He6zFDAeNGTL2YMDLugrOSgB5GloY?e=OQ3lna
 - Refactoring
-  - https://kennesawedu-my.sharepoint.com/personal/ggarne18_students_kennesaw_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fggarne18%5Fstudents%5Fkennesaw%5Fedu%2FDocuments%2FRecordings%2FGilded%20Rose%20Refactoring%2D20260214%5F180804%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E17c301d4%2De51d%2D4449%2D8abf%2Dd5666a859a70
+  - https://kennesawedu-my.sharepoint.com/:v:/g/personal/hwilder1_students_kennesaw_edu/IQCMn-6EbecnTYcv7aI2LMkHAdh6Ynmf-gpsdNIOS2Rooos?e=bceOSK
 - New Features
   - https://kennesawedu-my.sharepoint.com/:v:/g/personal/hwilder1_students_kennesaw_edu/IQAGAMztm8phSp6UwD75tqMKATY1PYOK6ojp-vOY6-pFrQo?e=f3eJBz&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
